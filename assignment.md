@@ -13,7 +13,7 @@
   
 8. On `python -m package` print `"Package ran as a script."` (among other prints). Make sure not to have errors in output.
    
-9.  On `python -m package.first <my_arg>` print `"First argument is: <my_arg>"` (among other prints).
+9.  On `python -m package <my_arg>` print `"First argument is: <my_arg>"` (among other prints).
    
-10. Optional: Enable running `package` without specifying `python -m package` 
+10. Optional: Enable running `package` without specifying `python -m package` (multiple ways to achieve this)
    

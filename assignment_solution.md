@@ -37,11 +37,11 @@
     1. Create an empty file `package/__main__.py`
     2. Add `print("Package ran as a script.")`
     - **Verify:** `python -m package` -> `"Package ran as a script."`
-9.  On `python -m package.first <my_arg>` print `"First argument is: <my_arg>"` (among other prints).
+9.  On `python -m package <my_arg>` print `"First argument is: <my_arg>"` (among other prints).
     1. In `__main__.py` import `sys` module.
     2. Check `len(sys.argv) >= 2` then print `f"First argument is: {sys.argv[1]}"`.
     - **Verify:** `python -m package.first test` -> `"First argument is: test"`
-10. Optional: Enable running `package` without specifying `python -m package` 
+10. Optional: Enable running `package` without specifying `python -m package` (multiple ways to achieve this)
     1.  Add shebang `#<path to python>` at the top of `package/__main__.py` (`which python`)
     2.  Make `__main__.py` executable: `chmod +x package/__main__.py`
     3.  Create a link to it using `ln -s __main__.py package/package`
