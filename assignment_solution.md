@@ -33,14 +33,14 @@
 7. **Only** allow the `second` module and `CONSTANT` from `first` to be accessible by `from package import *`
     1. Add `__all__ = ["CONSTANT", "second"]` into `package/__init__.py`
    - **Verify:** `from package import *`, then `second` and `CONSTANT` are available, but not `first`.
-8. On `python -m package` print `"Package ran as a script."` (among other prints). Make sure not to have errors in output.
+8. On `python -m package` make the last print say `"Package ran as a script."`. Make sure not to have errors in output.
     1. Create an empty file `package/__main__.py`
-    2. Add `print("Package ran as a script.")`
-    - **Verify:** `python -m package` -> `"Package ran as a script."`
-9.  On `python -m package <my_arg>` print `"First argument is: <my_arg>"` (among other prints).
-    1. In `__main__.py` import `sys` module.
-    2. Check `len(sys.argv) >= 2` then print `f"First argument is: {sys.argv[1]}"`.
-    - **Verify:** `python -m package test` -> `"First argument is: test"`
+    2. Add `print("Package ran as a script.")` as the last statement.
+    - **Verify:** `python -m package` -> last line is `"Package ran as a script."`
+9.  On `python -m package.second <my_arg>` print `"The argument is: <my_arg>"` (among other prints).
+    1. In `package/second.py` import `sys` module.
+    2. Under `if __name__ == "__main__":` check `len(sys.argv) >= 2` then print `f"The argument is: {sys.argv[1]}"`.
+    - **Verify:** `python -m package.second test` -> `"The argument is: test"`
 10. Optional: Enable running `package` without specifying `python -m package` (multiple ways to achieve this)
     1.  Add shebang `#<path to python>` at the top of `package/__main__.py` (`which python`)
     2.  Make `__main__.py` executable: `chmod +x package/__main__.py`
