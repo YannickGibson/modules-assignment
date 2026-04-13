@@ -11,9 +11,9 @@
    
 7. Allow **only** the `second` module and `CONSTANT` from `first` to be accessible by `from package import *`
   
-8. On `python -m package` make the last print be `"Package ran as a script."`. Make sure not to have errors in output.
+8. On `python -m package` make the last print say `"Package ran as a script."`. Make sure not to have errors in output.
    
 9.  On `python -m package.second <my_arg>` print `"The argument is: <my_arg>"` (among other prints).
    
-10. Optional: Enable running `package` without specifying `python -m package` 
-   
+10. Optional: Enable running `package` without specifying `python -m package` (multiple 
+ways to achieve this)
